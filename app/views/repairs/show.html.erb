@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<h3>Repair Detail</h3>
+<p>
+  <strong>Date Required:</strong>
+  <%= @repair.date_out %>
+</p>
+
+<p>
+  <strong>Cost quote:</strong>
+  <%= @repair.cost_quote %>
+</p>
+
+<p>
+  <strong>Labour cost:</strong>
+  <%= @repair.labour_cost %>
+</p>
+
+<p>
+  <strong>Total cost:</strong>
+  <%= @repair.total_cost %>
+</p>
+
+<p>
+  <strong>Repair detail:</strong>
+  <%= @repair.repair_detail %>
+</p>
+
+<p>
+  <strong>Customers name:</strong>
+  <%= @repair.customer.name %>
+</p>
+
+<p>
+  <strong>Discount applied:</strong>
+  <%= @repair.discount.level %>
+</p>
+
+<%= link_to 'Edit', edit_repair_path(@repair) %> |
+<%= link_to 'Back', repairs_path %>

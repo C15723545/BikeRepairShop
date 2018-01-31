@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @part.description %>
+</p>
+
+<p>
+  <strong>Unit price:</strong>
+  <%= @part.unit_price %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @part.image %>
+</p>
+
+<%= link_to 'Edit', edit_part_path(@part) %> |
+<%= link_to 'Back', parts_path %>

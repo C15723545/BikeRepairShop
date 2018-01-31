@@ -1,0 +1,52 @@
+<%= form_with(model: repair, local: true) do |form| %>
+  <% if repair.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(repair.errors.count, "error") %> prohibited this repair from being saved:</h2>
+
+      <ul>
+      <% repair.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date_out %>
+    <%= form.date_select :date_out, id: :repair_date_out %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost_quote %>
+    <%= form.text_field :cost_quote, id: :repair_cost_quote %>
+  </div>
+
+  <div class="field">
+    <%= form.label :labour_cost %>
+    <%= form.text_field :labour_cost, id: :repair_labour_cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_cost %>
+    <%= form.text_field :total_cost, id: :repair_total_cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :repair_detail %>
+    <%= form.text_field :repair_detail, id: :repair_repair_detail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_id %>
+    <%= form.collection_select :customer_id, Customer.all, :id, :name, :include_blank => "Select from list" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :discount_id %>
+    <%= form.collection_select :discount_id, Discount.all, :id, :level, :include_blank => "Select from list" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

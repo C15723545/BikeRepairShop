@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_out: 2018-01-30
+  cost_quote: 9.99
+  labour_cost: 9.99
+  total_cost: 9.99
+  repair_detail: MyString
+  customer_id: 1
+  discount_id: 1
+
+two:
+  date_out: 2018-01-30
+  cost_quote: 9.99
+  labour_cost: 9.99
+  total_cost: 9.99
+  repair_detail: MyString
+  customer_id: 1
+  discount_id: 1

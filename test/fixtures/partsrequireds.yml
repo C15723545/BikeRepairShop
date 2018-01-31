@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 1
+  part_id: 1
+  repair_id: 1
+
+two:
+  quantity: 1
+  part_id: 1
+  repair_id: 1

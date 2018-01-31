@@ -1,0 +1,32 @@
+<%= form_with(model: part, local: true) do |form| %>
+  <% if part.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(part.errors.count, "error") %> prohibited this part from being saved:</h2>
+
+      <ul>
+      <% part.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :part_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unit_price %>
+    <%= form.text_field :unit_price, id: :part_unit_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image, id: :part_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
