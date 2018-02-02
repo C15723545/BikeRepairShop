@@ -11,8 +11,13 @@
 </p>
 
 <p>
+  <strong>Labour Time:</strong>
+  <%= @part.wstime %>
+</p>
+
+<p>
   <strong>Image:</strong>
-  <%= @part.image %>
+  <%= image_tag(@part.image) %>
 </p>
 
 <%= link_to 'Edit', edit_part_path(@part) %> |
