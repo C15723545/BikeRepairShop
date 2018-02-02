@@ -1,6 +1,14 @@
-<h1>Editing Repair</h1>
+<h1>Edit Repair Detail</h1>
 
 <%= render 'form', repair: @repair %>
 
-<%= link_to 'Show', @repair %> |
-<%= link_to 'Back', repairs_path %>
+<br />
+<%= link_to 'Show Repair Detail', @repair %> |
+<%= link_to 'Back to Repair List', repairs_path %> | 
+<%= link_to 'Add New Customer', new_customer_path %> | 
+<%= link_to 'Add Bicycle', new_bicycle_path %>
+<hr />Links: 
+<%= link_to 'Repairs', repairs_path %> | 
+<%= link_to 'Parts', parts_path %> | 
+<%= link_to 'Customers', customers_path %> | 
+<%= link_to 'Discounts', discounts_path %>

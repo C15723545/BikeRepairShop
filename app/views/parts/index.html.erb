@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Parts</h1>
+<h1>Parts List</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Unit price</th>
-	  <th>Labour Time</th>
-      <th>Image</th>
+      <th>Part Description</th>
+      <th>Price</th>
+	  <th>Fitting (mins)</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,8 +17,7 @@
       <tr>
         <td><%= part.description %></td>
         <td><%= part.unit_price %></td>
-		<td><%= part.wstime %></td>
-        <td><%= part.image %></td>
+		<td><center><%= (part.wstime * 60) %></center></td>
         <td><%= link_to 'Show', part %></td>
         <td><%= link_to 'Edit', edit_part_path(part) %></td>
         <td><%= link_to 'Destroy', part, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,7 +28,7 @@
 
 <br>
 
-<%= link_to 'Add New Part', new_part_path %>
+<%= link_to 'Add New Part', new_part_path %><div align="right"><%= will_paginate @parts %></div>
 <hr />Links: 
 <%= link_to 'Repairs', repairs_path %> | 
 <%= link_to 'Parts', parts_path %> | 

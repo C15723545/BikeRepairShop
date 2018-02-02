@@ -2,5 +2,11 @@
 
 <%= render 'form', discount: @discount %>
 
-<%= link_to 'Show', @discount %> |
-<%= link_to 'Back', discounts_path %>
+<br />
+<%= link_to 'Show Details', @discount %> |
+<%= link_to 'Back to Discount List', discounts_path %>
+<hr />Links: 
+<%= link_to 'Repairs', repairs_path %> | 
+<%= link_to 'Parts', parts_path %> | 
+<%= link_to 'Customers', customers_path %> | 
+<%= link_to 'Discounts', discounts_path %>

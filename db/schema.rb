@@ -1,5 +1,5 @@
 
-ActiveRecord::Schema.define(version: 20180201191233) do
+ActiveRecord::Schema.define(version: 20180202153110) do
 
   create_table "bicycles", force: :cascade do |t|
     t.string "make"

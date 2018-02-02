@@ -4,7 +4,8 @@ class RepairsController < ApplicationController
   # GET /repairs
   # GET /repairs.json
   def index
-    @repairs = Repair.all
+    #@repairs = Repair.all
+	@repairs = Repair.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /repairs/1

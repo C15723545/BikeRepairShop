@@ -6,12 +6,12 @@
 </p>
 
 <p>
-  <strong>Unit price:</strong>
+  <strong>Unit price: €</strong>
   <%= @part.unit_price %>
 </p>
 
 <p>
-  <strong>Labour Time:</strong>
+  <strong>Fitting Time (hrs.):</strong>
   <%= @part.wstime %>
 </p>
 
@@ -20,5 +20,11 @@
   <%= image_tag(@part.image) %>
 </p>
 
-<%= link_to 'Edit', edit_part_path(@part) %> |
-<%= link_to 'Back', parts_path %>
+<%= link_to 'Edit Part Details', edit_part_path(@part) %> |
+<%= link_to 'Back to Parts List', parts_path %> | 
+<%= link_to 'Add New Part', new_part_path %>
+<hr />Links: 
+<%= link_to 'Repairs', repairs_path %> | 
+<%= link_to 'Parts', parts_path %> | 
+<%= link_to 'Customers', customers_path %> | 
+<%= link_to 'Discounts', discounts_path %>

@@ -26,7 +26,7 @@
         <td><%= bicycle.frame_size %></td>
         <td><%= bicycle.wheel_size %></td>
         <td><%= bicycle.extras %></td>
-        <td><%= bicycle.image %></td>
+        <td><%= image_tag bicycle.image, :size => "70x45" %></td>
         <td><%= bicycle.customer.name %></td>
         <td><%= link_to 'Show', bicycle %></td>
         <td><%= link_to 'Edit', edit_bicycle_path(bicycle) %></td>
@@ -38,7 +38,8 @@
 
 <br>
 
-<%= link_to 'Add Bicycle', new_bicycle_path %>
+<%= link_to 'Add Bicycle', new_bicycle_path %> | 
+<%= link_to 'Add New Customer', new_customer_path %><div align="right"><%= will_paginate @bicycles %></div>
 <hr />Links: 
 <%= link_to 'Repairs', repairs_path %> | 
 <%= link_to 'Parts', parts_path %> | 

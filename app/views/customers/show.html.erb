@@ -1,26 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @customer.name %>
+<p><h3>Customer Details :</h3>
+<%= @customer.name %><br />
+<%= @customer.address %><br />
+<%= @customer.phone %><br />
+<%= @customer.email %><br />
 </p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @customer.address %>
+<p><strong>Bicycle List:</strong><br />
 </p>
+<ul>
+<% @customer.bicycles.each do |bicycle| %>
+<li>
+   <%= bicycle.make %>,
+   <%= bicycle.model %>,
+   <%= bicycle.frame_size %>,
+   <%= bicycle.colour %>  </li>
+<% end %>
+</ul>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @customer.phone %>
-</p>
+<br />
+<%= link_to 'Edit Customer Details', edit_customer_path(@customer) %> |
+<%= link_to 'Back to Customer List', customers_path %> | 
 
-<p>
-  <strong>Email:</strong>
-  <%= @customer.email %>
-</p>
-
-
-
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to 'Add New Customer', new_customer_path %> | 
+<%= link_to 'Add Bicycle', new_bicycle_path %>
+<hr />Links: 
+<%= link_to 'Repairs', repairs_path %> | 
+<%= link_to 'Parts', parts_path %> | 
+<%= link_to 'Customers', customers_path %> | 
+<%= link_to 'Discounts', discounts_path %>
