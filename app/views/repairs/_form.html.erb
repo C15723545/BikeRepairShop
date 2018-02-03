@@ -1,3 +1,4 @@
+<div class="container"><div class="content">
 <%= form_with(model: repair, local: true) do |form| %>
   <% if repair.errors.any? %>
     <div id="error_explanation">
@@ -42,7 +43,7 @@
   </div>
   
   <div class="field">
-    <%= form.label :job_id %>
+    <%= form.label :job_status_id %>
     <%= form.collection_select :job_id, Job.all, :id, :status %>
   </div>
   
@@ -60,3 +61,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+</div></div>

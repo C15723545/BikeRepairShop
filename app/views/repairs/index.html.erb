@@ -1,3 +1,4 @@
+<div class="container"><div class="content">
 <p id="notice"><%= notice %></p>
 
 <h2>Repairs List</h2>
@@ -5,13 +6,13 @@
 <table>
   <thead>
     <tr>
-      <th>Date out</th>
-      <th>Quoted</th>
+      <th>Ready for</th>
+      <th>Quote</th>
       <th>Fitting</th>
-      <th>Total cost</th>
-      <th>Details</th>
+      <th>Total €</th>
+      <th>Repair Details</th>
       <th>Customer</th>
-      <th>Status</th>
+      <th>Repair Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -35,5 +36,6 @@
 </table>
 
 <br />
-<%= link_to 'Enter New Repair', new_repair_path %>
+< <%= link_to 'Enter New Repair', new_repair_path %> >
 <div align="right"><%= will_paginate @repairs %></div>
+</div></div>

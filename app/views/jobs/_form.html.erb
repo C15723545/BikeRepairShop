@@ -1,3 +1,4 @@
+<div class="container"><div class="content">
 <%= form_with(model: job, local: true) do |form| %>
   <% if job.errors.any? %>
     <div id="error_explanation">
@@ -17,7 +18,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :notes %>
+    <%= form.label :description %>
     <%= form.text_field :notes, id: :job_notes %>
   </div>
 
@@ -25,3 +26,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div></div>

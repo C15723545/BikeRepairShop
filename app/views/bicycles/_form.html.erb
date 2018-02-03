@@ -1,3 +1,4 @@
+<div class="container"><div class="content">
 <%= form_with(model: bicycle, local: true) do |form| %>
   <% if bicycle.errors.any? %>
     <div id="error_explanation">
@@ -17,7 +18,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :model %>
+    <%= form.label :type %>
     <%= form.select :model, ['City Bike', 'Racer', 'BMX', 'MTB', 'Kids', 'Electric']%>
 	
   </div>
@@ -56,3 +57,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div></div>

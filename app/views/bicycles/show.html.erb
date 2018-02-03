@@ -1,3 +1,4 @@
+<div class="container"><div class="content">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -6,7 +7,7 @@
 </p>
 
 <p>
-  <strong>Model:</strong>
+  <strong>Type:</strong>
   <%= @bicycle.model %>
 </p>
 
@@ -39,9 +40,8 @@
   <strong>Customer:</strong>
   <%= @bicycle.customer.name %>
 </p>
-
-<%= link_to 'Edit Bicycle Details', edit_bicycle_path(@bicycle) %> |
+< <%= link_to 'Edit Bicycle Details', edit_bicycle_path(@bicycle) %> |
 <%= link_to 'Back to Bicycle List', bicycles_path %>
 <%= link_to 'Add New Customer', new_customer_path %> | 
-<%= link_to 'Add Bicycle', new_bicycle_path %>
-
+<%= link_to 'Add Bicycle', new_bicycle_path %> >
+</div></div>

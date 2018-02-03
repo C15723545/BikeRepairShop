@@ -1,3 +1,4 @@
+<div class="container"><div class="content">
 <p id="notice"><%= notice %></p>
 
 <h2>Parts List</h2>
@@ -18,8 +19,9 @@
         <td><%= part.description %></td>
         <td><%= part.unit_price %></td>
 		<td><center><%= (part.wstime * 60) %></center></td>
-        <td><%= link_to 'Show', part %></td>
-        <td><%= link_to 'Edit', edit_part_path(part) %></td>
+		<td><%= image_tag part.image, :size => "70x45" %></td>
+        <td><%= link_to 'Show Details', part %></td>
+        <td><%= link_to 'Edit Part Detail', edit_part_path(part) %></td>
         <td><%= link_to 'Destroy', part, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -27,5 +29,7 @@
 </table>
 
 <br />
-<%= link_to 'Add New Part', new_part_path %><div align="right"><%= will_paginate @parts %></div>
+< <%= link_to 'Add New Part', new_part_path %> >
+<div align="right"><%= will_paginate @parts %></div>
 
+</div></div>

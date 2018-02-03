@@ -1,3 +1,4 @@
+<div class="container"><div class="content">
 <%= form_with(model: part, local: true) do |form| %>
   <% if part.errors.any? %>
     <div id="error_explanation">
@@ -22,7 +23,7 @@
   </div>
   
   <div class="field">
-    <%= form.label :Labour_Time %>
+    <%= form.label :fitting_Time_hours %>
     <%= form.text_field :wstime, id: :part_wstime %>
   </div>
 
@@ -35,3 +36,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div></div>

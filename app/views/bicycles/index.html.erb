@@ -1,3 +1,4 @@
+<div class="container"><div class="content">
 <p id="notice"><%= notice %></p>
 
 <h2>Customers Bicycles</h2>
@@ -6,7 +7,7 @@
   <thead>
     <tr>
       <th>Make</th>
-      <th>Model</th>
+      <th>Type</th>
       <th>Colour</th>
       <th>Frame size</th>
       <th>Wheel size</th>
@@ -37,6 +38,7 @@
 </table>
 
 <br />
-
-<%= link_to 'Add Bicycle', new_bicycle_path %> | 
-<%= link_to 'Add New Customer', new_customer_path %><div align="right"><%= will_paginate @bicycles %></div>
+< <%= link_to 'Add Bicycle', new_bicycle_path %> | 
+<%= link_to 'Add New Customer', new_customer_path %> > 
+<div align="right"><%= will_paginate @bicycles %></div>
+</div></div>
