@@ -31,8 +31,8 @@
 </p>
 
 <p>
-  <strong>Discount applied:</strong>
-  <%= @repair.discount.level %>
+  <strong>Repair Status:</strong>
+  <%= @repair.job.status %>
 </p>
 
 <br />
@@ -40,9 +40,3 @@
 <%= link_to 'Back to Repair List', repairs_path %> | 
 <%= link_to 'Add New Customer', new_customer_path %> | 
 <%= link_to 'Add Bicycle', new_bicycle_path %>
-<hr />Links: < 
-<%= link_to 'Repairs', repairs_path %> | 
-<%= link_to 'Parts', parts_path %> | 
-<%= link_to 'Customers', customers_path %> | 
-<%= link_to 'Customer Bicycles', bicycles_path %> |
-<%= link_to 'Discounts', discounts_path %> >

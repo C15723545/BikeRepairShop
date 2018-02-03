@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Repairs List</h1>
+<h2>Repairs List</h2>
 
 <table>
   <thead>
@@ -11,8 +11,7 @@
       <th>Total cost</th>
       <th>Details</th>
       <th>Customer</th>
-	  <th>Customer Bike</th>
-      <th>Discount</th>
+      <th>Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,8 +25,7 @@
         <td><%= repair.total_cost %></td>
         <td><%= repair.repair_detail %></td>
         <td><%= repair.customer.name %></td>
-		<td><%= repair.customer.name %></td>
-        <td><%= repair.discount.level %></td>
+        <td><%= repair.job.status %></td>
         <td><%= link_to 'Show', repair %></td>
         <td><%= link_to 'Edit', edit_repair_path(repair) %></td>
         <td><%= link_to 'Destroy', repair, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -36,12 +34,6 @@
   </tbody>
 </table>
 
-<br>
+<br />
 <%= link_to 'Enter New Repair', new_repair_path %>
 <div align="right"><%= will_paginate @repairs %></div>
-<hr />Links: < 
-<%= link_to 'Repairs', repairs_path %> | 
-<%= link_to 'Parts', parts_path %> | 
-<%= link_to 'Customers', customers_path %> | 
-<%= link_to 'Customer Bicycles', bicycles_path %> |
-<%= link_to 'Discounts', discounts_path %> >

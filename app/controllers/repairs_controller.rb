@@ -70,6 +70,6 @@ class RepairsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def repair_params
-      params.require(:repair).permit(:date_out, :cost_quote, :labour_cost, :total_cost, :repair_detail, :customer_id, :discount_id)
+      params.require(:repair).permit(:date_out, :cost_quote, :labour_cost, :total_cost, :repair_detail, :customer_id, :job_id)
     end
 end

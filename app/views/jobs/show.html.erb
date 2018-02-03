@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p><h3>Repair Status :</h3>
+  <%= @job.status %> | <%= @job.notes %><br />
+</p>
+
+<p><strong>Repairs in this List:</strong><br /></p>
+<ol>
+<% @job.repairs.each do |repair| %>
+	<li>
+		Job: <%= repair.repair_detail %>, 
+		Required for: <%= repair.date_out %>, 
+		Customer: <%= repair.customer.name %>, 
+		Price quoted: €<%= repair.cost_quote %> 
+	</li>
+<% end %>
+</ol>
+
+
+<br />
+<%= link_to 'Edit Status', edit_job_path(@job) %> |
+<%= link_to 'Back to Status List', jobs_path %>

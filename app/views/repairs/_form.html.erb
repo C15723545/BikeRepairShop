@@ -39,7 +39,11 @@
   <div class="field">
     <%= form.label :part_required %>
 	<%= form.collection_select :part_id, Part.all, :id, :description, :include_blank => "Select from list" %>
-
+  </div>
+  
+  <div class="field">
+    <%= form.label :job_id %>
+    <%= form.collection_select :job_id, Job.all, :id, :status %>
   </div>
   
   <div class="field">
@@ -52,11 +56,6 @@
     <%= form.collection_select :bicycle_id, Bicycle.all, :id, :make, :include_blank => "Select from list" %>
   </div>
   
-  <div class="field">
-    <%= form.label :discount_id %>
-    <%= form.collection_select :discount_id, Discount.all, :id, :level, :default => "None" %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
