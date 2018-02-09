@@ -6,4 +6,10 @@
 			<%= link_to "Sign Out", logout_path %>
          <% end %> 
 <%= image_tag("RoR-BRS-logo.png", :alt => "DT354 Bicycle Repair Shop Logo") %>
+	<% flash.each do |key, value| %>
+		<div class="flash <%= key %>">
+			<%= value %>
+		</div>
+	<% end %>
 </div></div>
+

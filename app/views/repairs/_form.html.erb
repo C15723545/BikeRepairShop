@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= form.label :date_out %>
-    <%= form.date_select :date_out, id: :repair_date_out %>
+    <%= form.date_field :date_out, id: :repair_date_out %>
   </div>
 
   <div class="field">
@@ -51,12 +51,7 @@
     <%= form.label :customer_id %>
     <%= form.collection_select :customer_id, Customer.all, :id, :name, :include_blank => "Select from list" %>
   </div>
-
-  <div class="field">
-    <%= form.label :bicycle_id %>
-    <%= form.collection_select :bicycle_id, Bicycle.all, :id, :make, :include_blank => "Select from list" %>
-  </div>
-  
+ 
   <div class="actions">
     <%= form.submit %>
   </div>

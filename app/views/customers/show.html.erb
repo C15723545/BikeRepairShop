@@ -1,27 +1,55 @@
-<div class="container"><div class="content">
+<div class="container">
 <p id="notice"><%= notice %></p>
-<h3>Customer Details :</h3>
-<p>
-<%= @customer.name %><br />
-<%= @customer.address %><br />
-<%= @customer.phone %><br />
-<%= @customer.email %><br />
-</p>
-<p><strong>Bicycle List:</strong><br />
-</p>
-<ul>
-<% @customer.bicycles.each do |bicycle| %>
-<li>
-   <%= bicycle.make %>,
-   <%= bicycle.model %>,
-   <%= bicycle.frame_size %>,
-   <%= bicycle.colour %>  </li>
-<% end %>
-</ul>
 
-<br />
-< <%= link_to 'Edit Customer Details', edit_customer_path(@customer) %> |
-<%= link_to 'Back to Customer List', customers_path %> | 
-<%= link_to 'Add New Customer', new_customer_path %> | 
-<%= link_to 'Add Bicycle', new_bicycle_path %> >
-</div></div>
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @customer.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @customer.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customer.email %>
+</p>
+
+<p>
+  <strong>Regular:</strong>
+  <%= @customer.regular %>
+</p>
+
+<p>
+  <strong>Required date:</strong>
+  <%= @customer.required_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @customer.description %>
+</p>
+
+<p>
+  <strong>Repair type:</strong>
+  <%= @customer.repair_type %>
+</p>
+
+<p>
+  <strong>Repair detail:</strong>
+  <%= @customer.repair_detail %>
+</p>
+
+<p>
+  <strong>Repair photo:</strong>
+  <%= image_tag(@customer.repair_photo) %>
+</p>
+
+< <%= link_to 'Edit Details', edit_customer_path(@customer) %> >
+</div>

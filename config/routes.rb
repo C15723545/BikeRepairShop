@@ -7,18 +7,17 @@ Rails.application.routes.draw do
 	delete 'logout' => :destroy
   end
 
+  resources :customers
   resources :users
   resources :quantities
   resources :jobs
   resources :repairs
   resources :parts
-  resources :bicycles
-  resources :customers
   
   get '/jobs' => 'jobs#job'
   get '/repairs' => 'repairs#repair'
   get '/parts' => 'partrs#part'
-  get '/bicycles' => 'bicycles#bicycle'
+
   get '/quantities' => 'quantities#quantity'
   get '/customers' => 'customers#customer'
   get '/users' => 'users#user'

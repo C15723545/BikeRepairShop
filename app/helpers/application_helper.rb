@@ -1,9 +1,9 @@
 module ApplicationHelper
 	def signed_in?
-		if session[:user_id].nil?
+		if session[:customer_id].nil?
 			return
 		else
-			@current_user = User.find_by_id(session[:user_id])
+			@current_user = Customer.find_by_id(session[:customer_id])
 		end
 	end
 end

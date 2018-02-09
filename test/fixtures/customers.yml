@@ -5,9 +5,23 @@ one:
   address: MyString
   phone: MyString
   email: MyString
+  password_digest: MyString
+  regular: false
+  required_date: 2018-02-09
+  description: MyString
+  repair_type: MyString
+  repair_detail: MyString
+  repair_photo: MyString
 
 two:
   name: MyString
   address: MyString
   phone: MyString
   email: MyString
+  password_digest: MyString
+  regular: false
+  required_date: 2018-02-09
+  description: MyString
+  repair_type: MyString
+  repair_detail: MyString
+  repair_photo: MyString

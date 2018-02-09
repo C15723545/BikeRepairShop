@@ -23,15 +23,55 @@
   </div>
 
   <div class="field">
-    <%= form.label :contact_phone %>
+    <%= form.label :phone %>
     <%= form.text_field :phone, id: :customer_phone %>
   </div>
 
   <div class="field">
-    <%= form.label :contact_email %>
+    <%= form.label :email %>
     <%= form.text_field :email, id: :customer_email %>
   </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password, id: :customer_password %>
+  </div>
   
+  <div class="field">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :regular %>
+    <%= form.check_box :regular, id: :customer_regular %>
+  </div>
+
+  <div class="field">
+    <%= form.label :required_date %>
+    <%= form.date_field :required_date, id: :customer_required_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :customer_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.select :repair_type, ['City Bike', 'Racer', 'BMX', 'MTB', 'Kids', 'Electric', 'Other']%>
+  </div>
+
+  <div class="field">
+    <%= form.label :repair_detail %>
+    <%= form.text_field :repair_detail, id: :customer_repair_detail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :repair_photo %>
+    <%= form.text_field :repair_photo, id: :customer_repair_photo %>	
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
