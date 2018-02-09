@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180203151030) do
+ActiveRecord::Schema.define(version: 20180207185645) do
 
   create_table "bicycles", force: :cascade do |t|
     t.string "make"
@@ -50,12 +50,14 @@ ActiveRecord::Schema.define(version: 20180203151030) do
     t.decimal "wstime"
   end
 
-  create_table "partsrequireds", force: :cascade do |t|
+  create_table "quantities", force: :cascade do |t|
     t.integer "quantity"
-    t.integer "part_id"
     t.integer "repair_id"
+    t.integer "part_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["part_id"], name: "index_quantities_on_part_id"
+    t.index ["repair_id"], name: "index_quantities_on_repair_id"
   end
 
   create_table "repairs", force: :cascade do |t|
@@ -68,6 +70,18 @@ ActiveRecord::Schema.define(version: 20180203151030) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "job_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.date "dob"
+    t.string "gender"
+    t.boolean "regular"
+    t.string "photo"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

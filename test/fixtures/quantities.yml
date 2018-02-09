@@ -2,10 +2,10 @@
 
 one:
   quantity: 1
-  part_id: 1
-  repair_id: 1
+  repair: one
+  part: one
 
 two:
   quantity: 1
-  part_id: 1
-  repair_id: 1
+  repair: two
+  part: two

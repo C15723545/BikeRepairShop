@@ -1,1 +1,9 @@
-<div class="header"><div class="center"><%= image_tag("RoR-BRS-logo.png", :alt => "DT354 Bicycle Repair Shop Logo") %></div></div>
+<div class="header"><div class="center">
+		<% if !signed_in? %>
+			<%= link_to "Sign In", login_path %>
+		<% else %>
+			Signed in as: <%= @current_user.name %>
+			<%= link_to "Sign Out", logout_path %>
+         <% end %> 
+<%= image_tag("RoR-BRS-logo.png", :alt => "DT354 Bicycle Repair Shop Logo") %>
+</div></div>

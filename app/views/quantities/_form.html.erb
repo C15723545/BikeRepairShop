@@ -1,0 +1,32 @@
+<%= form_with(model: quantity, local: true) do |form| %>
+  <% if quantity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quantity.errors.count, "error") %> prohibited this quantity from being saved:</h2>
+
+      <ul>
+      <% quantity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, id: :quantity_quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :repair_id %>
+    <%= form.text_field :repair_id, id: :quantity_repair_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :part_id %>
+    <%= form.text_field :part_id, id: :quantity_part_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

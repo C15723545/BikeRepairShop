@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @quantity.quantity %>
+</p>
+
+<p>
+  <strong>Repair:</strong>
+  <%= @quantity.repair %>
+</p>
+
+<p>
+  <strong>Part:</strong>
+  <%= @quantity.part %>
+</p>
+
+<%= link_to 'Edit', edit_quantity_path(@quantity) %> |
+<%= link_to 'Back', quantities_path %>
