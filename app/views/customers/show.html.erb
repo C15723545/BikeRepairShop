@@ -1,55 +1,36 @@
-<div class="container">
 <p id="notice"><%= notice %></p>
-
+<h3>Bicycles for this customer:</h3>
+<ol>
+	<% @customer.repairs.each do |repair| %>
+		<li>
+			<%= repair.repair_detail %>, 
+			Required for: <%= repair.date_out %>,
+			Price quoted: €<%= repair.cost_quote %>,
+		</li>
+	<% end %>
+</ol>
+<br />
+<h4>Customer Details:</h4>
 <p>
   <strong>Name:</strong>
   <%= @customer.name %>
 </p>
-
 <p>
   <strong>Address:</strong>
   <%= @customer.address %>
-</p>
-
+  </p>
 <p>
   <strong>Phone:</strong>
   <%= @customer.phone %>
-</p>
-
+  </p>
 <p>
   <strong>Email:</strong>
   <%= @customer.email %>
-</p>
-
+  </p>
 <p>
-  <strong>Regular:</strong>
+  <strong>Regular Customer:</strong>
   <%= @customer.regular %>
 </p>
-
-<p>
-  <strong>Required date:</strong>
-  <%= @customer.required_date %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @customer.description %>
-</p>
-
-<p>
-  <strong>Repair type:</strong>
-  <%= @customer.repair_type %>
-</p>
-
-<p>
-  <strong>Repair detail:</strong>
-  <%= @customer.repair_detail %>
-</p>
-
-<p>
-  <strong>Repair photo:</strong>
-  <%= image_tag(@customer.repair_photo) %>
-</p>
+<br />
 
 < <%= link_to 'Edit Details', edit_customer_path(@customer) %> >
-</div>
