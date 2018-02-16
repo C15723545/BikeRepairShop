@@ -17,7 +17,7 @@ class RepairsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create repair" do
     assert_difference('Repair.count') do
-      post repairs_url, params: { repair: { cost_quote: @repair.cost_quote, customer_id: @repair.customer_id, date_out: @repair.date_out, discount_id: @repair.discount_id, labour_cost: @repair.labour_cost, repair_detail: @repair.repair_detail, total_cost: @repair.total_cost } }
+      post repairs_url, params: { repair: { cost_quote: @repair.cost_quote, customer_id: @repair.customer_id, date_out: @repair.date_out, description: @repair.description, job_id: @repair.job_id, labour_cost: @repair.labour_cost, repair_detail: @repair.repair_detail, repair_photo: @repair.repair_photo, repair_type: @repair.repair_type, required_date: @repair.required_date, total_cost: @repair.total_cost } }
     end
 
     assert_redirected_to repair_url(Repair.last)
@@ -34,7 +34,7 @@ class RepairsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update repair" do
-    patch repair_url(@repair), params: { repair: { cost_quote: @repair.cost_quote, customer_id: @repair.customer_id, date_out: @repair.date_out, discount_id: @repair.discount_id, labour_cost: @repair.labour_cost, repair_detail: @repair.repair_detail, total_cost: @repair.total_cost } }
+    patch repair_url(@repair), params: { repair: { cost_quote: @repair.cost_quote, customer_id: @repair.customer_id, date_out: @repair.date_out, description: @repair.description, job_id: @repair.job_id, labour_cost: @repair.labour_cost, repair_detail: @repair.repair_detail, repair_photo: @repair.repair_photo, repair_type: @repair.repair_type, required_date: @repair.required_date, total_cost: @repair.total_cost } }
     assert_redirected_to repair_url(@repair)
   end
 

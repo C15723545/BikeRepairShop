@@ -5,13 +5,17 @@
 <table>
   <thead>
     <tr>
-      <th>Ready for</th>
-      <th>Quote</th>
-      <th>Fitting</th>
-      <th>Total €</th>
-      <th>Repair Details</th>
+      <th>Date</th>
+      <th>Quote.</th>
+      <th>Lab.</th>
+      <th>Total.</th>
       <th>Customer</th>
-      <th>Repair Status</th>
+      <th>Status</th>
+      <th>Req. by</th>
+      <th>Desc.</th>
+      <th>Type</th>
+      <th>Details</th>
+      <th>Photo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,9 +27,13 @@
         <td><%= repair.cost_quote %></td>
         <td><%= repair.labour_cost %></td>
         <td><%= repair.total_cost %></td>
-        <td><%= repair.repair_detail %></td>
-		<td><%= repair.customer.name %></td>     
+        <td><%= repair.customer.name %></td>
         <td><%= repair.job.status %></td>
+        <td><%= repair.required_date %></td>
+        <td><%= repair.description %></td>
+        <td><%= repair.repair_type %></td>
+        <td><%= repair.repair_detail %></td>
+		<td><%= image_tag repair.repair_photo, :size => "50x50" %></td>
         <td><%= link_to 'Show', repair %></td>
         <td><%= link_to 'Edit', edit_repair_path(repair) %></td>
         <td><%= link_to 'Destroy', repair, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -35,5 +43,5 @@
 </table>
 
 <br />
-< <%= link_to 'Enter New Repair', new_repair_path %> >
-<div align="right"><%= will_paginate @repairs %></div>
+< <%= link_to 'New Repair', new_repair_path %> >
+<div align="right"><%= will_paginate @parts %></div>

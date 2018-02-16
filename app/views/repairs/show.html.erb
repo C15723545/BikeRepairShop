@@ -1,13 +1,12 @@
-
 <p id="notice"><%= notice %></p>
-<h3>Repair Detail</h3>
+<h2>Repair Information</h2>
 <p>
-  <strong>Date Required:</strong>
+  <strong>Date Collected:</strong>
   <%= @repair.date_out %>
 </p>
 
 <p>
-  <strong>Cost quote:</strong>
+  <strong>Original quote:</strong>
   <%= @repair.cost_quote %>
 </p>
 
@@ -22,21 +21,38 @@
 </p>
 
 <p>
+  <strong>Customer:</strong>
+  <%= @repair.customer.name %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @repair.job.status %>
+</p>
+
+<p>
+  <strong>Required date:</strong>
+  <%= @repair.required_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @repair.description %>
+</p>
+
+<p>
+  <strong>Repair type:</strong>
+  <%= @repair.repair_type %>
+</p>
+
+<p>
   <strong>Repair detail:</strong>
   <%= @repair.repair_detail %>
 </p>
 
 <p>
-  <strong>Customers name:</strong>
-  <%= @repair.customer.name %>
+  <strong>Repair photo:</strong>
+  <%= image_tag(@repair.repair_photo) %>
 </p>
 
-<p>
-  <strong>Repair Status:</strong>
-  <%= @repair.job.status %>
-</p>
-
-<br />
-< <%= link_to 'Edit Repair Detail', edit_repair_path(@repair) %> |
-<%= link_to 'Back to Repair List', repairs_path %> | 
-<%= link_to 'Add New Customer', new_customer_path %> >
+< <%= link_to 'Edit Details', edit_repair_path(@repair) %> >

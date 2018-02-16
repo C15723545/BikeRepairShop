@@ -1,36 +1,31 @@
 <p id="notice"><%= notice %></p>
-<h3>Bicycles for this customer:</h3>
-<ol>
-	<% @customer.repairs.each do |repair| %>
-		<li>
-			<%= repair.repair_detail %>, 
-			Required for: <%= repair.date_out %>,
-			Price quoted: €<%= repair.cost_quote %>,
-		</li>
-	<% end %>
-</ol>
 <br />
-<h4>Customer Details:</h4>
+<h2>Customer Details</h2>
+<br />
 <p>
-  <strong>Name:</strong>
-  <%= @customer.name %>
+   <h3><small>Name:</small> 
+   <%= @customer.name %></h3>
 </p>
+
 <p>
   <strong>Address:</strong>
   <%= @customer.address %>
-  </p>
+</p>
+
 <p>
   <strong>Phone:</strong>
   <%= @customer.phone %>
-  </p>
+</p>
+
 <p>
   <strong>Email:</strong>
   <%= @customer.email %>
-  </p>
+</p>
+
 <p>
-  <strong>Regular Customer:</strong>
+  <strong>Regular:</strong>
   <%= @customer.regular %>
 </p>
 <br />
-
-< <%= link_to 'Edit Details', edit_customer_path(@customer) %> >
+< <%= link_to 'Edit Profile', edit_customer_path(@customer) %> | 
+< <%= link_to 'Enter New Repair', new_repair_path %> >

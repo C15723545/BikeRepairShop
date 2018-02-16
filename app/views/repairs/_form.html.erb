@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :date_out %>
+    <%= form.label :date_collected %>
     <%= form.date_field :date_out, id: :repair_date_out %>
   </div>
 
   <div class="field">
-    <%= form.label :cost_quote %>
+    <%= form.label :original_quote %>
     <%= form.text_field :cost_quote, id: :repair_cost_quote %>
   </div>
 
@@ -30,6 +30,31 @@
     <%= form.label :total_cost %>
     <%= form.text_field :total_cost, id: :repair_total_cost %>
   </div>
+  
+  <div class="field">
+    <%= form.label :customer_id %>
+    <%= form.collection_select :customer_id, Customer.all, :id, :name, :include_blank => "Select from list" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Job_status %>
+    <%= form.collection_select :job_id, Job.all, :id, :status, :include_blank => "Select from list" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :required_date %>
+    <%= form.date_field :required_date, id: :repair_required_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :repair_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :select_bike_type %>
+	<%= form.select :repair_type, ['City Bike    ', 'Racer', 'BMX', 'MTB', 'Kids', 'Electric     ']%>
+  </div>
 
   <div class="field">
     <%= form.label :repair_detail %>
@@ -37,20 +62,10 @@
   </div>
 
   <div class="field">
-    <%= form.label :part_required %>
-	<%= form.collection_select :part_id, Part.all, :id, :description, :include_blank => "Select from list" %>
+    <%= form.label :repair_photo %>
+    <%= form.text_field :repair_photo, id: :repair_repair_photo %>
   </div>
-  
-  <div class="field">
-    <%= form.label :job_status_id %>
-    <%= form.collection_select :job_id, Job.all, :id, :status %>
-  </div>
-  
-  <div class="field">
-    <%= form.label :customer_id %>
-    <%= form.collection_select :customer_id, Customer.all, :id, :name, :include_blank => "Select from list" %>
-  </div>
- 
+
   <div class="actions">
     <%= form.submit %>
   </div>

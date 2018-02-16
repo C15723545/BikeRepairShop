@@ -8,13 +8,12 @@
 	<% @job.repairs.each do |repair| %>
 		<li>
 			Job: <%= repair.repair_detail %>, 
-			Required for: <%= repair.date_out %>, 
+			Required for: <%= repair.required_date %>, 
 			Customer: <%= repair.customer.name %>, 
-			Price quoted: €<%= repair.cost_quote %> 
+			Total Price: €<%= repair.total_cost %> 
 		</li>
 	<% end %>
 </ol>
-<br />
 <br />
 <br />
 

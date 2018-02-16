@@ -10,22 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180209140324) do
+ActiveRecord::Schema.define(version: 20180211182522) do
 
-  create_table "bicycles", force: :cascade do |t|
-    t.string "make"
-    t.string "model"
-    t.string "colour"
-    t.integer "frame_size"
-    t.integer "wheel_size"
-    t.string "extras"
-    t.string "image"
-    t.integer "customer_id"
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "phone"
+    t.string "email"
+    t.string "password_digest"
+    t.boolean "regular"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "customers", force: :cascade do |t|
+  create_table "customers1", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "phone"
@@ -68,6 +66,22 @@ ActiveRecord::Schema.define(version: 20180209140324) do
   end
 
   create_table "repairs", force: :cascade do |t|
+    t.date "date_out"
+    t.decimal "cost_quote"
+    t.decimal "labour_cost"
+    t.decimal "total_cost"
+    t.integer "customer_id"
+    t.integer "job_id"
+    t.date "required_date"
+    t.string "description"
+    t.string "repair_type"
+    t.string "repair_detail"
+    t.string "repair_photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "repairs1", force: :cascade do |t|
     t.date "date_out"
     t.decimal "cost_quote"
     t.decimal "labour_cost"

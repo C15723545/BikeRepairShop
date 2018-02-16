@@ -1,18 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Customers Repairs List</h2>
+<h2>Customers List</h2>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
+      <th>Address</th>
       <th>Phone</th>
-      <th>Reg</th>
-      <th>Required by</th>
-      <th>Description</th>
-      <th>Type</th>
-      <th>Detail</th>
-      <th>Photo</th>
+      <th>Email</th>
+      <th>Regular</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,13 +18,10 @@
     <% @customers.each do |customer| %>
       <tr>
         <td><%= customer.name %></td>
+        <td><%= customer.address %></td>
         <td><%= customer.phone %></td>
-        <td><%= check_box_tag customer.regular %></td>
-        <td><%= customer.required_date %></td>
-        <td><%= customer.description %></td>
-        <td><%= customer.repair_type %></td>
-        <td><%= customer.repair_detail %></td>
-		<td><%= image_tag customer.repair_photo, :size => "50x45" %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.regular %></td>
         <td><%= link_to 'Show', customer %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -36,7 +30,7 @@
   </tbody>
 </table>
 
-<br>
+<br />
 
 < <%= link_to 'Add New Customer', new_customer_path %> >
-<div align="right"><%= will_paginate @repairs %></div>
+<div align="right"><%= will_paginate @parts %></div>
