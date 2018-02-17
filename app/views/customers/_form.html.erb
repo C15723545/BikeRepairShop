@@ -10,12 +10,12 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :customer_name %>
   </div>
-
+	
   <div class="field">
     <%= form.label :address %>
     <%= form.text_field :address, id: :customer_address %>
@@ -47,6 +47,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit({:class => 'btn btn-primary'}) %>
   </div>
 <% end %>

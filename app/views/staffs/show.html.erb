@@ -1,0 +1,45 @@
+<br />
+<h2>Employee Details</h2>
+<p>
+  <strong>Name:</strong>
+  <%= @staff.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @staff.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @staff.phone %>
+</p>
+
+<p>
+  <strong>Date of Birth:</strong>
+  <%= @staff.dob %>
+</p>
+
+<p>
+  <strong>PPS No.:</strong>
+  <%= @staff.ppsn %>
+</p>
+
+<p>
+  <strong>Start Date:</strong>
+  <%= @staff.startdate %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @staff.position %>
+</p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= euro (@staff.salary) %>
+</p>
+<br />
+
+< <%= link_to 'Edit Details', edit_staff_path(@staff) %> |
+<%= link_to 'Employee List', staffs_path %> >

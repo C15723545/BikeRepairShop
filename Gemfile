@@ -9,6 +9,8 @@ gem 'coffee-script-source', '1.8.0'
 gem 'will_paginate', '~> 3.1'
 gem 'bootstrap-sass', '~> 3.3.1'
 
+gem 'validates_email_format_of'
+
 gem 'rails', '~> 5.1.4'
 
 gem 'sqlite3'

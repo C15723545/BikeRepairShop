@@ -1,7 +1,7 @@
 
 <br />
 <br />
-<h2>Log In</h2>
+<h2>Customer Log In</h2>
 <div class="center">
 <%= form_tag do %>
 	<table>
@@ -14,7 +14,7 @@
 			<td><%= password_field_tag :password %></td>
 		</tr>
 		<tr>
-			<td><%= submit_tag "Log in" %></td>
+			<td><%= submit_tag "Log in", ({:class => 'btn btn-primary'}) %></td>
 		</tr>
 	</table>
 <% end %>

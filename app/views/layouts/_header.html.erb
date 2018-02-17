@@ -1,15 +1,24 @@
-<div class="header"><div class="center">
-		<% if !signed_in? %>
-			<%= link_to "Sign In", login_path %>
-		<% else %>
-			Signed in as: <%= @current_user.name %>
-			<%= link_to "Sign Out", logout_path %>
-         <% end %> 
-<%= image_tag("RoR-BRS-logo.png", :alt => "DT354 Bicycle Repair Shop Logo") %>
-	<% flash.each do |key, value| %>
-		<div class="flash <%= key %>">
-			<%= value %>
-		</div>
-	<% end %>
-</div></div>
+<div class="header">
+	<div class="center">
+		<div class="textcenter">
+			<% if !signed_in? %>
+				< <%= link_to "Sign In", login_path %>
+			<% else %>
+				Signed in as: <%= @current_user.name %>
+				< <%= link_to "Sign Out", logout_path %>
+			<% end %> 
+
+			| <%= link_to 'Home', home_path %> | 
+			<%= link_to 'About', about_path %> | 
+			<%=  link_to "Book a Repair", new_repair_path %> | 
+			<%=  link_to "Register Here", new_customer_path %> >
+			</div>
+		<table width="85%" border="0" cellpadding="2">
+		  <tr>
+			<td><%= link_to image_tag("ror.png", :alt => "Rails"), repairs_path %></td>
+			<td><%= image_tag("RoR-BRS-logo.png", :alt => "Shop Logo") %></td>
+		  </tr>
+		</table>
+	</div>
+</div>
 

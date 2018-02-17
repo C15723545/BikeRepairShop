@@ -1,0 +1,52 @@
+<%= form_with(model: repair, local: true) do |form| %>
+  <% if repair.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(repair.errors.count, "error") %> prohibited this repair from being saved:</h2>
+
+      <ul>
+      <% repair.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :customer_id %>
+    <%= form.collection_select :customer_id, Customer.all, :id, :name, :value => @current_user.name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Job_status %>
+    <%= form.collection_select :job_id, Job.all, :id, :status, :value => "Waiting in Queue" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :required_date %>
+    <%= form.date_field :required_date, id: :repair_required_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :repair_description  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :select_bike_type %>
+	<%= form.select :repair_type, ['City Bike    ', 'Racer', 'BMX', 'MTB', 'Kids', 'Electric     ']%>
+  </div>
+
+  <div class="field">
+    <%= form.label :repair_detail %>
+    <%= form.text_field :repair_detail, id: :repair_repair_detail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Input_your_photo %>
+    <%= form.text_field :repair_photo, id: :repair_repair_photo,:value => "bike.png" %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit({:class => 'btn btn-primary'}) %>
+  </div>
+<% end %>

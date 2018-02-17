@@ -1,5 +1,6 @@
 class RepairsController < ApplicationController
   before_action :set_repair, only: [:show, :edit, :update, :destroy]
+  before_action :authorise, :only => [:new, :create, :edit, :update, :destroy]
 
   # GET /repairs
   # GET /repairs.json

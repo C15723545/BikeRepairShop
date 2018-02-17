@@ -3,17 +3,21 @@
 one:
   name: MyString
   email: MyString
-  dob: 2018-02-07
-  gender: MyString
-  regular: false
-  photo: MyString
+  phone: MyString
+  dob: 2018-02-17
+  ppsn: MyString
+  startdate: 2018-02-17
+  position: MyString
+  salary: 9.99
   password_digest: MyString
 
 two:
   name: MyString
   email: MyString
-  dob: 2018-02-07
-  gender: MyString
-  regular: false
-  photo: MyString
+  phone: MyString
+  dob: 2018-02-17
+  ppsn: MyString
+  startdate: 2018-02-17
+  position: MyString
+  salary: 9.99
   password_digest: MyString

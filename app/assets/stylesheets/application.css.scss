@@ -20,7 +20,7 @@
 @charset "utf-8";
 body {
 	font: 150%/1.4 Verdana, Arial, Helvetica, sans-serif;
-	background-color: #E6E6FA;
+	background-color: #edf4ff;
 	margin: 0;
 	padding: 0;
 	color: #333333;
@@ -62,7 +62,7 @@ a:hover, a:active, a:focus {
 
 .header {
 	width: 960px;
-	background-color: #91BDFF;
+	background-color: #bad6ff;
 	margin: 0 auto; 
 }
 
@@ -72,8 +72,12 @@ a:hover, a:active, a:focus {
 
 .center {
     margin: auto;
-    width: 70%;
+    width: 90%;
     padding: 10px;
+}
+
+.textcenter {
+	text-align: center;
 }
 
 .field {
@@ -96,7 +100,7 @@ th {
 .footer {
 	width: 960px;
 	padding: 5px 0;
-	background-color: #B0C4DE;
+	background-color: #bad6ff;
 	margin: 0 auto; 
 	text-align: center;
 }

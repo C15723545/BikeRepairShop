@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211182522) do
+ActiveRecord::Schema.define(version: 20180217175105) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -23,18 +23,10 @@ ActiveRecord::Schema.define(version: 20180211182522) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "customers1", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "phone"
-    t.string "email"
-    t.string "password_digest"
-    t.boolean "regular"
-    t.date "required_date"
-    t.string "description"
-    t.string "repair_type"
-    t.string "repair_detail"
-    t.string "repair_photo"
+  create_table "feedbacks", force: :cascade do |t|
+    t.text "content"
+    t.integer "customer_id"
+    t.integer "repair_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -81,26 +73,29 @@ ActiveRecord::Schema.define(version: 20180211182522) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "repairs1", force: :cascade do |t|
-    t.date "date_out"
-    t.decimal "cost_quote"
-    t.decimal "labour_cost"
-    t.decimal "total_cost"
-    t.string "repair_detail"
-    t.integer "customer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "job_id"
-  end
-
-  create_table "users", force: :cascade do |t|
+  create_table "staffs", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "phone"
     t.date "dob"
-    t.string "gender"
-    t.boolean "regular"
-    t.string "photo"
+    t.string "ppsn"
+    t.date "startdate"
+    t.string "position"
+    t.decimal "salary"
     t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "staffs1", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.date "dob"
+    t.string "ppsn"
+    t.date "startdate"
+    t.string "position"
+    t.decimal "salary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

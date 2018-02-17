@@ -1,58 +1,51 @@
-<p id="notice"><%= notice %></p>
+<br />
 <h2>Repair Information</h2>
-<p>
-  <strong>Date Collected:</strong>
-  <%= @repair.date_out %>
-</p>
+<table width="95%" border="0" cellpadding="5">
+  <tr>
+    <th scope="col">Staff Area</th>
+    <th scope="col">Customer Description</th>
+    <th scope="col">Photo</th>
+  </tr>
+  <tr>
+    <td><small><em>Date Collected:</small></em> <%= @repair.date_out %></td>
+    <td><small><em>Name:</small></em> <%= @repair.customer.name %></td>
+    <td rowspan="5"><%= image_tag(@repair.repair_photo) %></td>
+  </tr>
+  <tr>
+    <td><small><em>Quoted:</small></em> <%= @repair.cost_quote %></td>
+    <td><small><em>Required for:</small></em> <%= @repair.required_date %></td>
+  </tr>
+  <tr>
+    <td><small><em>Labour:</small></em> <%= @repair.labour_cost %></td>
+    <td><small><em>Description:</small></em> <%= @repair.description %></td>
+  </tr>
+  <tr>
+    <td><small><em>Total cost:</small></em> <%= @repair.total_cost %></td>
+    <td><small><em>Bike type:</small></em> <%= @repair.repair_type %></td>
+  </tr>
+  <tr>
+    <td><small><em>Current Status:</small></em> <%= @repair.job.status %></td>
+    <td><small><em>Repair detail:</small></em> <%= @repair.repair_detail %></td>
+  </tr>
+</table>
+<br />
+<div class="center">
+<h4>We'd Love Your Feedback</h4>
+	<%= form_for([@repair, Feedback.new]) do |form| %>	
+		<%= form.text_area :content, :rows => 2, :cols => 80 %>
+			<div class="actions">
+				<%= form.submit "Post Feedback",({:class => 'btn btn-primary'}) %>
+			</div>
+	<% end %>
 
-<p>
-  <strong>Original quote:</strong>
-  <%= @repair.cost_quote %>
-</p>
-
-<p>
-  <strong>Labour cost:</strong>
-  <%= @repair.labour_cost %>
-</p>
-
-<p>
-  <strong>Total cost:</strong>
-  <%= @repair.total_cost %>
-</p>
-
-<p>
-  <strong>Customer:</strong>
-  <%= @repair.customer.name %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @repair.job.status %>
-</p>
-
-<p>
-  <strong>Required date:</strong>
-  <%= @repair.required_date %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @repair.description %>
-</p>
-
-<p>
-  <strong>Repair type:</strong>
-  <%= @repair.repair_type %>
-</p>
-
-<p>
-  <strong>Repair detail:</strong>
-  <%= @repair.repair_detail %>
-</p>
-
-<p>
-  <strong>Repair photo:</strong>
-  <%= image_tag(@repair.repair_photo) %>
-</p>
-
-< <%= link_to 'Edit Details', edit_repair_path(@repair) %> >
+<br />
+<% if @repair.feedbacks.empty? %>
+	<h4>You are the first to give us feedback</h4>
+<% else %>
+	<h4>Feedback Received:</h4>
+	<% @repair.feedbacks.reverse.each do |feedback| %>
+		<li><%= feedback.content %> | 
+		<em>Posted <%= time_ago_in_words(feedback.created_at) %> ago by <%= feedback.customer.name %></em><br /></li>
+	<% end %>
+<% end %>
+</div>
