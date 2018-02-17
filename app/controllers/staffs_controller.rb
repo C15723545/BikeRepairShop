@@ -1,5 +1,6 @@
 class StaffsController < ApplicationController
   before_action :set_staff, only: [:show, :edit, :update, :destroy]
+  before_action :authorise, :only => [:show, :new, :create, :edit, :update, :destroy]
 
   # GET /staffs
   # GET /staffs.json
