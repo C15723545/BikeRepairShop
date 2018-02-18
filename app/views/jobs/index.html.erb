@@ -3,6 +3,7 @@
 <%= link_to 'Customers', customers_path %> | 
 <%= link_to "Parts", parts_path %> | 
 <%= link_to "Employees", staffs_path %> | 
+<%= link_to "Admin", admin_path %> | 
 <%=  link_to "Jobs", jobs_path %> >
 </div>
 <h2>Work Status</h2>
@@ -21,8 +22,8 @@
       <tr>
         <td><%= job.status %></td>
         <td><%= job.notes %></td>
-        <td><%= link_to 'Show Repairs Status', job %></td>
-        <td><%= link_to 'Edit Status', edit_job_path(job) %></td>
+        <td> <%= link_to 'Show Repairs Status', job %> |</td>
+        <td><%= link_to 'Edit Status', edit_job_path(job) %> |</td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

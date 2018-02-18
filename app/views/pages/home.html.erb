@@ -3,16 +3,16 @@
 <br />
 <%= image_tag("workshop.jpg", :alt => "Workshop", class: "img-responsive center-block") %>
 <div class="textcenter">
-<p>Ruby on Rails, CA Assignment - Student: Peter Purfield, C15723545</p>
-<p>GitHub link: https://github.com/C15723545/BikeRepairShop</p>
+<p>Ruby on Rails, CA Assignment - Student: Peter Purfield, C15723545
+<%= link_to "<< GitHub link >>", "https://github.com/C15723545/BikeRepairShop", :target => "_blank" %></p>
 <br />
 <h4>Sign In or Register</h4>
 <%= link_to "Login Here ", login_path, ({:class => 'btn btn-default'}) %>
 <%=  link_to "Register Here", new_customer_path, ({:class => 'btn btn-default'}) %> <br /><br />
-<h4>Book a Repair: <%=  link_to "Click her to book a repair", new_repair_path, ({:class => 'btn btn-warning'}) %></h4>
+<h4>Log a Repair: <%=  link_to "Click here to book a repair", new_repair_path, ({:class => 'btn btn-warning'}) %></h4>
 </div>
 
 <br />
 <h3>We're glad you dropped in...</h3>
-<p>Whether the best part of your day is getting to work on two wheels, you live for the thrill of speeding down singletrack in the middle of the woods or you spend all your free time on the road trying to get a little bit faster, your favorite bike shop is, above all, your sanctuary.</p>
+<p>Whether the best part of your day is getting to work on two wheels, you live for the thrill of speeding down single-track in the middle of the woods or you spend all your free time on the road trying to get a little bit faster, your favourite bike shop is, above all, your sanctuary.</p>
 <br />
