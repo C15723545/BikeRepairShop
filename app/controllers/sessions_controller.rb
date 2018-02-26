@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 	customer = Customer.find_by_email(params[:email])
 	if customer && customer.authenticate(params[:password])
 		session[:customer_id] = customer.id
-		redirect_to customer
+		redirect_to session[:return_to] || root_path
 	else
 		flash.now[:error] = "Invalid customer email / password combination"
 		render 'new'
