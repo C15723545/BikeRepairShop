@@ -17,7 +17,12 @@
 
 <p>
   <strong>Date of Birth:</strong>
-  <%= @staff.dob %>
+  <%= @staff.dob.strftime("%d-%m-%Y") %>
+</p>
+
+<p>
+  <strong>Age Now:</strong>
+  <%= (Time.now.to_date - @staff.dob).div 365 %> Years 
 </p>
 
 <p>
@@ -27,7 +32,7 @@
 
 <p>
   <strong>Start Date:</strong>
-  <%= @staff.startdate %>
+  <%= @staff.startdate.strftime("%d-%m-%Y") %>
 </p>
 
 <p>

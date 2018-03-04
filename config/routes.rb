@@ -9,10 +9,11 @@ Rails.application.routes.draw do
 	post 'login' => :create
 	get 'logout' => :destroy
 	delete 'logout' => :destroy
-	#get 'stafflogin' => : staffnew
-    #post 'safflogin' => : staffcreate
-    #get 'stafflogout' => : staffdestroy
-    #delete 'stafflogout' => : staffdestroy 
+	
+	get 'stafflogin' => :staffnew
+    post 'stafflogin' => :staffcreate
+    get 'stafflogout' => :staffdestroy
+    delete 'stafflogout' => :staffdestroy 
   end
 
   resources :repairs
@@ -31,6 +32,8 @@ Rails.application.routes.draw do
   get '/quantities' => 'quantities#quantity'
   get '/customers' => 'customers#customer'
   get '/staffs' => 'staffs#staff'
+  
+  get 'search', :to => 'repairs#search'
   
   root 'pages#home'
   

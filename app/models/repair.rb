@@ -7,4 +7,12 @@ class Repair < ApplicationRecord
 	validates :repair_detail, presence: true
 	validates :job, presence: true
 	validates :customer, presence: true
+	
+	def self.search(query, current_page)
+		if query
+			page(current_page).where("description LIKE ?", "%#{query}%").order('id DESC')
+		else
+			page(current_page).order('id DESC') 
+		end
+	end
 end

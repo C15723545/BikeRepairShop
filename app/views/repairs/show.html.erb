@@ -13,7 +13,7 @@
   </tr>
   <tr>
     <td><small><em>Quoted:</small></em> <%= @repair.cost_quote %></td>
-    <td><small><em>Required for:</small></em> <%= @repair.required_date %></td>
+    <td><small><em>Required for:</small></em> <%= @repair.required_date.strftime("%d-%B-%Y") %></td>
   </tr>
   <tr>
     <td><small><em>Labour:</small></em> <%= @repair.labour_cost %></td>

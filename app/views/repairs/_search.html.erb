@@ -1,0 +1,4 @@
+<%= form_tag(search_path, method: :get) do %>
+	<%=text_field_tag(:query, params[:query], placeholder: "Describe bicycle") %>
+	<%= submit_tag "Search for Repair" %>
+<% end %>

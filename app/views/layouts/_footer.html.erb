@@ -1,8 +1,14 @@
 <div class="footer"><div class="center">< 
 <%= link_to 'Home', home_path %> | 
 <%= link_to 'About', about_path %> | 
-<%= link_to "Login Here ", login_path %> | 
+<%= link_to "Customer Login", login_path %> | 
 <%=  link_to "Book a Repair", new_repair_path %> | 
+			<% if !staffsigned_in? %>
+				<%= link_to "Staff Login", stafflogin_path %>
+			<% else %>
+				<strong><%= @staffcurrent_user.name %></strong>, signed in: 
+				<%= link_to "Logout", stafflogout_path %>
+			<% end %> | 
 <%=  link_to "Register Here", new_customer_path %> >
 <br />
 <small>DT354-3 Web Development 2 - Ruby on Rails Project - February 2018</small>

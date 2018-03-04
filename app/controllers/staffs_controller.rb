@@ -1,6 +1,6 @@
 class StaffsController < ApplicationController
   before_action :set_staff, only: [:show, :edit, :update, :destroy]
-  before_action :authorise, :only => [:show, :new, :create, :edit, :update, :destroy]
+  before_action :staffauthorise, :only => [:show, :new, :create, :edit, :update, :destroy]
 
   # GET /staffs
   # GET /staffs.json
@@ -12,7 +12,7 @@ class StaffsController < ApplicationController
   # GET /staffs/1.json
   def show
   end
-
+  
   # GET /staffs/new
   def new
     @staff = Staff.new
@@ -29,7 +29,7 @@ class StaffsController < ApplicationController
 
     respond_to do |format|
       if @staff.save
-        format.html { redirect_to @staff, notice: 'Staff was successfully created.' }
+        format.html { redirect_to @staff, notice: 'Staff member was successfully created.' }
         format.json { render :show, status: :created, location: @staff }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class StaffsController < ApplicationController
   def update
     respond_to do |format|
       if @staff.update(staff_params)
-        format.html { redirect_to @staff, notice: 'Staff was successfully updated.' }
+        format.html { redirect_to @staff, notice: 'Staff record was successfully updated.' }
         format.json { render :show, status: :ok, location: @staff }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class StaffsController < ApplicationController
   def destroy
     @staff.destroy
     respond_to do |format|
-      format.html { redirect_to staffs_url, notice: 'Staff was successfully destroyed.' }
+      format.html { redirect_to staffs_url, notice: 'Staff record was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

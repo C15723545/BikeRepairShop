@@ -1,6 +1,6 @@
 class PartsController < ApplicationController
   before_action :set_part, only: [:show, :edit, :update, :destroy]
-  before_action :authorise, :only => [:new, :create, :edit, :update, :destroy]
+  before_action :staffauthorise, :only => [:new, :create, :edit, :update, :destroy]
 
   # GET /parts
   # GET /parts.json

@@ -27,7 +27,7 @@
         <td><%= staff.name %></td>
         <td><%= staff.email %></td>
         <td><%= staff.phone %></td>
-        <td><%= staff.startdate %></td>
+        <td><%= staff.startdate.strftime("%d-%m-%Y") %></td>
         <td><%= staff.position %></td>
         <td><%= euro (staff.salary) %></td>
         <td><%= link_to 'Show', staff %></td>

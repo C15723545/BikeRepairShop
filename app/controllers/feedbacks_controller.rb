@@ -1,6 +1,7 @@
 class FeedbacksController < ApplicationController
 	before_action :authorise
-	
+	before_action :authorise, :only => [:new, :create]
+
 	def new
 		#@customer = Customer.find params[:customer_id]
 	end

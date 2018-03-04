@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
     staff = Staff.find_by_email(params[:email])
     if staff && staff.authenticate(params[:password])
         session[:staff_id] = staff.id        #store id of the user in the session is user found by email and password
-        redirect_to root_path
+        redirect_to staffs_path
         flash.now[:error] = "Invalid staff email and password combination."        #displays the user/show view redirect_to user
     else
         flash.now[:error] = "Invalid staff email / password combination."
@@ -43,7 +43,7 @@ class SessionsController < ApplicationController
     else
         flash[:notice] = "You have to be signed in"
     end
-    redirect_to login_path
+    redirect_to stafflogin_path
   end
   
 end

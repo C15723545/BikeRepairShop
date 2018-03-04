@@ -1,6 +1,7 @@
 class RepairsController < ApplicationController
   before_action :set_repair, only: [:show, :edit, :update, :destroy]
-  before_action :authorise, :only => [:new, :create, :edit, :update, :destroy]
+  before_action :authorise, :only => [:new, :create]
+  before_action :staffauthorise, :only => [:edit, :update, :destroy]
 
   # GET /repairs
   # GET /repairs.json
@@ -14,6 +15,16 @@ class RepairsController < ApplicationController
   def show
   end
 
+  def search
+	@repairs = Repair.search params[:query], params[:page]
+	unless @repairs.empty?
+		render 'index'
+	else
+		flash[:notice] = 'No bicycle description matches that search'
+		redirect_to repairs_path
+	end
+  end
+  
   # GET /repairs/new
   def new
     @repair = Repair.new
