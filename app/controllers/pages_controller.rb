@@ -7,5 +7,6 @@ class PagesController < ApplicationController
   end
 
   def admin
+	#@jobs = Job.all
   end
 end

@@ -29,7 +29,7 @@
   <tbody>
     <% @repairs.reverse.each do |repair| %>
       <tr>
-        <td><%= repair.required_date.strftime("%d-%m") %></td>
+        <td><%= repair.required_date %></td>
         <td><%= euro (repair.total_cost) %></td>
         <td><%= repair.customer.name %></td>
         <td><%= repair.job.status %></td>

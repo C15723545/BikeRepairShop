@@ -31,7 +31,6 @@ module ApplicationHelper
 			session[:returned_to] = request.fullpath
 			redirect_to stafflogin_path, :notice => "Staff must sign in to access this page"
 		end
+		
 	end
-		  
-	
 end

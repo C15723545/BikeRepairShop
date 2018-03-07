@@ -12,8 +12,8 @@
     <td rowspan="5"><%= image_tag(@repair.repair_photo) %></td>
   </tr>
   <tr>
-    <td><small><em>Quoted:</small></em> <%= @repair.cost_quote %></td>
-    <td><small><em>Required for:</small></em> <%= @repair.required_date.strftime("%d-%B-%Y") %></td>
+    <td><small><em>Quoted:</small></em> <%= euro (@repair.cost_quote) %></td>
+    <td><small><em>Required for:</small></em> <%= @repair.required_date %></td>
   </tr>
   <tr>
     <td><small><em>Labour:</small></em> <%= @repair.labour_cost %></td>

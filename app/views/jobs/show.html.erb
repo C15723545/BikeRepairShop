@@ -1,4 +1,11 @@
-
+<div class="textcenter">Staff Links:< 
+<%= link_to 'Repairs', repairs_path %> | 
+<%= link_to 'Customers', customers_path %> | 
+<%= link_to "Parts", parts_path %> | 
+<%= link_to "Employees", staffs_path %> | 
+<%= link_to "Admin", admin_path %> | 
+<%=  link_to "Jobs", jobs_path %> >
+</div>
 <h3>Repair Status : <%= @job.status %> | <%= @job.notes %></h3>
 <br />
 
@@ -6,10 +13,10 @@
 <ol>
 	<% @job.repairs.each do |repair| %>
 		<li>
-			Job: <%= repair.repair_detail %>, 
-			Required for: <%= repair.required_date %>, 
+			<%= repair.repair_detail %>, 
+			Required for: <%= repair.required_date.strftime("%d-%m-%Y") %>, 
 			Customer: <%= repair.customer.name %>, 
-			Total Price: €<%= repair.total_cost %> 
+			Total Price: <%= euro (repair.total_cost) %> 
 		</li>
 	<% end %>
 </ol>
