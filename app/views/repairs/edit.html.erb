@@ -1,6 +1,14 @@
-<br />
-<h2>Update Repair Details</h2>
+<div class="textcenter">Staff Links:< 
+<%= link_to 'Repairs', repairs_path %> | 
+<%= link_to 'Customers', customers_path %> | 
+<%= link_to "Parts", parts_path %> | 
+<%= link_to "Employees", staffs_path %> | 
+<%= link_to "Admin", admin_path %> | 
+<%=  link_to "Jobs", jobs_path %> >
+</div>
 
+<h2>Update Repair Details</h2>
+<br />
 <%= render 'form', repair: @repair %>
 <br />
 < <%= link_to 'Show Details', @repair %> |
